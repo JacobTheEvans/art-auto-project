@@ -2,7 +2,6 @@ import xlrd
 from collections import OrderedDict
 import simplejson as json
 
-
 def loadData(file_name):
     return xlrd.open_workbook(file_name)
 
