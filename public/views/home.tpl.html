@@ -1,0 +1,103 @@
+<div class="container" ng-init="loadData()">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="cat-box">
+        <h2>Frame Order</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Category</label>
+            <select ng-model="catSelected" ng-options="item for item in cats" class="form-control m-select"></select>
+          </div>
+          <div class="col-md-6">
+            <label>Refernce</label>
+            <select ng-model="refNumber" ng-options="item for item in data | search :catSelected" class="form-control m-select"></select>
+          </div>
+        </div>
+      </div>
+      <div class="item-box" ng-if="selectedItem">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Metrage:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.METRAGE" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Haut:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.HAUT" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Lokal 2:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.LOKAL2" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Quantité 3:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.QTY3" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Lokal 3:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.LOKAL3" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">Quantité 5:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.QTY5" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="item-label">LokaL 5:</p>
+          </div>
+          <div class="col-md-6">
+            <input ng-model="selectedItem.LOKAL5" disabled="true" class="form-control">
+          </div>
+        </div>
+        <div class="update-area">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="btn-area">
+                <label> Montant utilisé</label>
+                <input ng-model="amount" type="number" class="form-control" placeholder="Amount Used">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="btn-area">
+                <button class="btn btn-primary form-control" ng-click="postUpdate(amount, selectedItem)" ng-disabled="amount == undefined">Send Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="admin-btn-pop">
+    <div class="container">
+      <div class="row" ng-if="priv == 'admin'">
+        <div class="col-md-12">
+          <a href="/#/admin">
+            <p><i class="fa fa-cogs" aria-hidden="true"></i> Admin</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

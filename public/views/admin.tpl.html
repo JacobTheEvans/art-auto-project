@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="cat-box" ng-if="section == ''">
+        <h2>Admin</h2>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('excel')">Excel</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('new-users')">New Users</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('current-users')">Current Users</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('records')">Records</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'new-users'" ng-init="loadNewUsers()">
+        <h2>New Users</h2>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Admin</th>
+                <th>Approve</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in newUsers">
+                <td class="username">{{user.username}}</td>
+                <td>
+                  <div class="checkbox">
+                    <label><input type="checkbox" ng-click="toggleAdminSelection(user)" ng-value="user.isAdmin">Admin</label>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-success" ng-click="addNewUser(user)"><i class="fa fa-check" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeNewUser(user)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'current-users'" ng-init="loadCurrentUsers()">
+        <h2>Current Users</h2>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Priv</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in currentUsers">
+                <td class="username">{{user.username}}</td>
+                <td class="username">
+                  {{user.priv}}
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeCurrentUser(user)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'excel'" ng-init="loadCurrentUsers()">
+        <h2>Upload Stock Excel</h2>
+        <div class="file-upload-sec">
+          <button class="btn btn-primary btn-custom-large" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="/*"> Select File</button>
+          <div class="file-text"> File: {{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}</div>
+          <p class="file-text">{{errorMsg}}</p>
+          <p class="file-text">{{customFileMessage}}</p>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'records'" ng-init="loadRecords()">
+        <h2>Order Records</h2>
+        <input ng-model="searchTerm" type="text" class="form-control" placeholder="Search">
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Item</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="record in records | orderBy: '-date' | searchAdmin :searchTerm">
+                <td class="username">{{record.username}}</td>
+                <td class="username">{{record.item}}</td>
+                <td class="username">{{record.amount}}</td>
+                <td class="username">{{record.showDate}}</td>
+                <td class="username">{{record.showTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="admin-btn-pop">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/#/home">
+            <p><i class="fa fa-home" aria-hidden="true"></i> Home</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

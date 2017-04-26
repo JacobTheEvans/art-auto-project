@@ -1,0 +1,153 @@
+.cat-box {
+  margin-top: 100px;
+}
+
+.cat-box h2 {
+  font-size: 35px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.item-box {
+  padding-top: 0px;
+  margin-top: 20px;
+}
+
+.item-box p{
+  font-size: 17px;
+}
+
+.item-label {
+  font-size: 20px !important;
+}
+
+.log-box {
+  margin-top: 150px;
+}
+
+.log-box input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.log-box h3 {
+  font-size: 45px;
+  text-align: center;
+  padding-bottom: 9px;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.btn-area .btn {
+  padding-top: 5px;
+  text-align: center;
+  margin-top: 23.2px;
+}
+
+.update-area {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 18px;
+}
+
+.m-select {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  font-size: 15px !important;
+}
+
+.btn-sign {
+  padding-top: 4px;
+}
+
+.admin-btn-pop {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.admin-btn-pop p {
+  font-size: 20px;
+}
+
+.admin-btn-pop a  {
+  transition: color 0.2s ease-in-out;
+}
+
+.admin-btn-pop a:hover {
+  text-decoration: none;
+  color: #90CAF9;
+}
+
+.btn-custom-large {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+
+.btn-side {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.inner-side label {
+  font-size: 22px;
+  padding-bottom: 5px;
+}
+
+.inner-side p {
+  font-size: 22px;
+}
+
+.table-users th {
+  font-size: 20px;
+}
+
+.table-users .username {
+  padding-top: 15px;
+}
+
+.table-users td {
+  font-size: 19px;
+}
+
+.back-button {
+  margin-top: 50px;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.upload-box {
+  text-align: center;
+}
+
+.file-upload-sec {
+  text-align: center;
+}
+
+.file-text {
+  text-align: left;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+}
